@@ -1,0 +1,157 @@
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+p {
+  margin: 0 0;
+  position: absolute;
+  font: 16px Verdana;
+  color: #eee;
+  height: 25px;
+  top: calc(100vh - 30px);
+  text-shadow: 0 0 2px white;
+}
+p a {
+  text-decoration: none;
+  color: #aaa;
+}
+span {
+  font-size: 11px;
+}
+p > a:first-of-type {
+  font-size: 20px;
+}
+body {
+  overflow: hidden;
+}
+
+/* Cake Button Styles */
+#cake-button-container {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 100;
+}
+
+#cake-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #ff9ac9;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+#cake-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#cake-button img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+/* Birthday Popup Styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.popup.show {
+  opacity: 1;
+  display: flex;
+}
+
+.popup-content {
+  background: white;
+  width: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.popup.show .popup-content {
+  transform: scale(1);
+}
+
+.popup-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#close-popup {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+#close-popup:hover {
+  background-color: #f2f2f2;
+  color: #555;
+}
+
+.popup-body {
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-cake-img {
+  width: 250px;
+  height: 350px;
+  margin-bottom: 40px;
+ 
+}
+
+.birthday-message {
+  position: relative !important;
+  font-size: 18px !important;
+  line-height: 1.5;
+  color: #333 !important;
+  text-align: center;
+  top: auto !important;
+  height: auto !important;
+  margin-bottom: 10px;
+  text-shadow: none !important;
+  font-family: 'Verdana', sans-serif !important;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
